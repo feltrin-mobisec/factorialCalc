@@ -3,11 +3,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  scope '/api' do
-    scope '/v1' do
-      scope '/factor_calc' do
-        get '/' => 'factor_calc#calculate'
-      end
-    end
-  end
+
+  # get 'number', to: "calculations#number"
+  # post "number", to: "calculations#number"
+  get '/calculations/:id', to: 'calculations#show'
+
+  # scope '/api' do
+  #   scope '/v1' do
+  #     get '/factor_calc/number', to: 'factor_calc#number'
+  #   end
+  # end
 end
