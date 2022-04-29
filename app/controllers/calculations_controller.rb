@@ -1,8 +1,9 @@
 class CalculationsController < ApplicationController
 
-  def show
+  def calculate
   #  @number = params[:id].fact
-    @number = (1..params[:id]).reduce(:*) || 1
+    @number = (1..params[:number].to_i).reduce(:*) || 1
+    render @number
   end
 
 

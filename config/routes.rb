@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   # get 'number', to: "calculations#number"
   # post "number", to: "calculations#number"
-  get '/calculations/:id', to: 'calculations#show'
+  
+  
+  # get '/calculations/:id', to: 'calculations#show'
+  get '/calculations/:number', to: 'calculations#calculate'
+
+
 
   # scope '/api' do
   #   scope '/v1' do
