@@ -10,10 +10,18 @@ class CalculationsController < ApplicationController
       #   i += 1
       # end
       # render json: { "result": n}  
-      n= (1..n).reduce(:*) || 1
+      #n= (1..n).reduce(:*) || 1
+      #render json: { "result": n}  
+      
+      i = 1
+      while i < params[:number].to_i
+        n = i * n
+        i += 1
+      end
       render json: { "result": n}  
     else
-      render json: { "result": "n"}
+      Rails.logger.error "ERROR 400 Invalid value supplied"
+      render Rails.logger.error "ERROR 400 Invalid value supplied"
     end
      
   end
