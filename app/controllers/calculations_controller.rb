@@ -1,9 +1,21 @@
+require 'byebug'
 class CalculationsController < ApplicationController
 
   def calculate
-  #  @number = params[:id].fact
-    @number = (1..params[:number].to_i).reduce(:*) || 1
-    render @number
+    n = params[:number].to_i
+    if (n.is_a? Integer) && n > 0 
+      # i = 1
+      # while i < n
+      #   n = n * i
+      #   i += 1
+      # end
+      # render json: { "result": n}  
+      n= (1..n).reduce(:*) || 1
+      render json: { "result": n}  
+    else
+      render json: { "result": "n"}
+    end
+     
   end
 
 
