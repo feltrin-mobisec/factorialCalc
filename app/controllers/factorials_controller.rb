@@ -20,11 +20,9 @@ class FactorialsController < ApplicationController
       end
       render json: { "result": n}  
     elsif n > 45
-      Rails.logger.error "ERROR 406 The value requested is too big"
-      render Rails.logger.error "ERROR 406 The value requested is too big"
+      error(406, "The value requested is too big")
     else
-      Rails.logger.error "ERROR 400 The value is negative or not an integer"
-      render Rails.logger.error "ERROR 400 The value is negative or not an integer"
+      error(400, "The value is negative or not an integer")
     end
      
   end
