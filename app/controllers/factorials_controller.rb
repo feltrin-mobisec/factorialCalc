@@ -1,9 +1,9 @@
 require 'byebug'
-class CalculationsController < ApplicationController
+class FactorialsController < ApplicationController
 
   def calculate
     n = params[:number].to_i
-    if (n.is_a? Integer) && n > 0 
+    if (n.is_a? Integer) && n > 0 && n <46
       # i = 1
       # while i < n
       #   n = n * i
@@ -19,9 +19,12 @@ class CalculationsController < ApplicationController
         i += 1
       end
       render json: { "result": n}  
+    elsif n > 45
+      Rails.logger.error "ERROR 406 The value requested is too big"
+      render Rails.logger.error "ERROR 406 The value requested is too big"
     else
-      Rails.logger.error "ERROR 400 Invalid value supplied"
-      render Rails.logger.error "ERROR 400 Invalid value supplied"
+      Rails.logger.error "ERROR 400 The value is negative or not an integer"
+      render Rails.logger.error "ERROR 400 The value is negative or not an integer"
     end
      
   end

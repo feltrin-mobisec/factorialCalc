@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   
   # get '/calculations/:id', to: 'calculations#show'
-  get '/calculations/:number', to: 'calculations#calculate'
+  get '/factorials/:number', to: 'factorials#calculate'
 
 
 
