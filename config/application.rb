@@ -22,7 +22,8 @@ module FactorialCalc
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.hosts << "775b-151-71-151-111.eu.ngrok.io"
+    config.hosts << "295c-151-71-151-111.eu.ngrok.io"
+    config.hosts << "localhost:3000"
 
     # Configuration for the application, engines, and railties goes here.
     #

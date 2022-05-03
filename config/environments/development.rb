@@ -44,7 +44,8 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
-  config.hosts << "https://775b-151-71-151-111.eu.ngrok.io"
+  config.hosts << "https://295c-151-71-151-111.eu.ngrok.io"
+  config.hosts << "http://localhost:3000"
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

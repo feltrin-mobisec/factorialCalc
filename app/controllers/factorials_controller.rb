@@ -11,7 +11,7 @@ class FactorialsController < ApplicationController
           n = i * n
           i += 1
         end
-        render json: { "result": n}  
+        n > 0 ? (render json: { "result": n}) : (render json: { "result": 1})
       else
         error(406, "The value requested is too big")
       end
