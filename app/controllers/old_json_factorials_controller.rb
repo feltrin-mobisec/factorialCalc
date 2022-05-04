@@ -2,11 +2,12 @@ require 'byebug'
 class JsonFactorialsController < ApplicationController
 
   def calculate
-    $VARIAGLOB = params[:number]
-    byebug
+    #$VARIAGLOB = params[:number]
+    #byebug
     # check if number is integer positive
+    if params[:number] !~ /\D/
     #if params[:number] =~ /^[0-9]\d*$/
-    if params[:number] =~ /^\+?(0|[1-9]\d*)$/
+    #if params[:number] =~ /^\+?(0|[1-9]\d*)$/
       n = params[:number].to_i
       if n < 46
         n = factorial(n)

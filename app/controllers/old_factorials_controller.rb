@@ -8,12 +8,6 @@ class FactorialsController < ApplicationController
       if n < 46
         n = factorial(n)
         render json: { "result": n}
-        # i = 1
-        # while i < params[:number].to_i
-        #   n = i * n
-        #   i += 1
-        # end
-        # n > 0 ? (render json: { "result": n}) : (render json: { "result": 1})
       else
         error(406, "The value requested is too big")
       end
