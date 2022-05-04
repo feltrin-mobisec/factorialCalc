@@ -6,7 +6,7 @@ module Api
             # check if number is integer and positive
             if params[:number] !~ /\D/
               n = params[:number].to_i
-              if n < 46
+              if n < 13
                 n = factorial(n)
                 render json: { "result": n}
               else
@@ -30,3 +30,6 @@ module Api
     end
   end    
 end
+
+# check if result is over a 32 bit machine capacity with unsigned integer
+# n > (2^32)-1 ? (render json: { "result": n}) : (error(406, "The value requested is too big"))

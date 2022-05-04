@@ -10,7 +10,7 @@ module Api
           #if params[:number] =~ /^[0-9]\d*$/
           #if params[:number] =~ /^\+?(0|[1-9]\d*)$/
             n = params[:number].to_i
-            if n < 46
+            if n < 13
               n = factorial(n)
               # i = 1
               # while i < params[:number].to_i
@@ -19,7 +19,7 @@ module Api
               # end
               # n > 0 ? (render json: { "result": n}) : (render json: { "result": 1})
               render json: { "result": n}
-            else n > 46
+            else n >= 13
               error(406, "The value requested is too big")
             end
           else
