@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :operations do
-        get 'factorial/:number', to: 'factorial#calculate', constraints: { number: /[^\/]+/ }, :constraints => { number: /.*/}
-        get 'json_input_factorial', to: 'json_input_factorial#calculate'
+        get '/factorial/:number', to: 'factorial#calculate', constraints: { number: /[^\/]+/ }, :constraints => { number: /.*/}
+        get '/json_input_factorial', to: 'json_input_factorial#calculate'
       end
     end
   end

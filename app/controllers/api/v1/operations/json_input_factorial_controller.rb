@@ -6,18 +6,14 @@ module Api
           #$VARIAGLOB = params[:number]
           #byebug
           # check if number is integer positive
-          if params[:number] !~ /\D/
+          if (params[:number].is_a? Integer) && params[:number] >= 0
+          #if params[:number] !~ /\D/
           #if params[:number] =~ /^[0-9]\d*$/
           #if params[:number] =~ /^\+?(0|[1-9]\d*)$/
             n = params[:number].to_i
+
             if n < 13
               n = factorial(n)
-              # i = 1
-              # while i < params[:number].to_i
-              #   n = i * n
-              #   i += 1
-              # end
-              # n > 0 ? (render json: { "result": n}) : (render json: { "result": 1})
               render json: { "result": n}
             else n >= 13
               error(406, "The value requested is too big")

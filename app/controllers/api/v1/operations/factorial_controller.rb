@@ -4,7 +4,8 @@ module Api
       class FactorialController < ApplicationController
         def calculate
             # check if number is integer and positive
-            if params[:number] !~ /\D/
+            #if params[:number] !~ /\D/
+            if params[:number] =~ /^[0-9]\d*$/
               n = params[:number].to_i
               if n < 13
                 n = factorial(n)
