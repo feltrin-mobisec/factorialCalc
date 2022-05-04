@@ -3,15 +3,10 @@ module Api
     module Operations
       class JsonInputFactorialController < ApplicationController
         def calculate
-          #$VARIAGLOB = params[:number]
-          #byebug
           # check if number is integer positive
           if (params[:number].is_a? Integer) && params[:number] >= 0
-          #if params[:number] !~ /\D/
-          #if params[:number] =~ /^[0-9]\d*$/
-          #if params[:number] =~ /^\+?(0|[1-9]\d*)$/
             n = params[:number].to_i
-
+            # max factorial for machine 32bit integer unsigned
             if n < 13
               n = factorial(n)
               render json: { "result": n}
